@@ -37,18 +37,9 @@ class MemberController extends Controller
      */
     public function actionIndex()
     {
-        $childs=Level::getAllUnderLevel(Yii::$app->user->identity->level_id);
-        $ids=Level::getLevelsArr($childs);
-        $ids[] = Level::getBaseId(Yii::$app->user->identity->level_id);
-        $searchModel = new MemberSearch();
-        $dataProvider = new ActiveDataProvider([
-            'query' => Member::find()->andWhere(['level_id'=>$ids]),
-            'pagination' => [
-                'pageSize' => 20
-            ]
-        ]
-        );
 
+        $searchModel=new MemberSearch();
+        $dataProvider=$searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

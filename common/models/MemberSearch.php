@@ -6,20 +6,27 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Member;
+use common\models\LevelMember;
 
 /**
  * MemberSearch represents the model behind the search form about `common\models\Member`.
  */
 class MemberSearch extends Member
 {
+    public $is_do;
+
+    private static $is_do_arr=[
+        1=>'未处理',
+        2=>'已处理',
+    ];
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'gender', 'level_id', 'station', 'area_id'], 'integer'],
-            [['name', 'pin_id', 'mobile', 'work_danwei'], 'safe'],
+            [['id', 'gender', 'level_id', 'station', 'area_id','is_do'], 'integer'],
+            [['name', 'pin_id', 'mobile', 'work_danwei','is_do'], 'safe'],
         ];
     }
 
@@ -31,7 +38,9 @@ class MemberSearch extends Member
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
-
+    public static function isDoArr(){
+        return static::$is_do_arr;
+    }
     /**
      * Creates data provider instance with search query applied
      *
@@ -45,9 +54,16 @@ class MemberSearch extends Member
 
         // add conditions that should always apply here
 
+        $childs=Level::getAllUnderLevel(Yii::$app->user->identity->level_id);
+        $ids=Level::getLevelsArr($childs);
+        $ids[] = Level::getBaseId(Yii::$app->user->identity->level_id);
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
+                'query' => $query,
+                'pagination' => [
+                    'pageSize' => 20
+                ]
+            ]
+        );
 
         $this->load($params);
 
@@ -59,9 +75,10 @@ class MemberSearch extends Member
 
         // grid filtering conditions
         $query->andFilterWhere([
+            'level_id'=>$ids,
             'id' => $this->id,
             'gender' => $this->gender,
-            'level_id' => $this->level_id,
+//            'level_id' => $this->level_id,
             'station' => $this->station,
             'area_id' => $this->area_id,
         ]);
@@ -70,7 +87,15 @@ class MemberSearch extends Member
             ->andFilterWhere(['like', 'pin_id', $this->pin_id])
             ->andFilterWhere(['like', 'mobile', $this->mobile])
             ->andFilterWhere(['like', 'work_danwei', $this->work_danwei]);
+        var_dump($this->id);
+//        var_dump(LevelMember::getIsdoId(Yii::$app->user->identity->level_id));
+        if($this->is_do == 2){
+            $query->andFilterWhere(['in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)]);
+        }else if($this->is_do == 1){
+            $query->andFilterWhere(['not in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)]);
+        }
 
         return $dataProvider;
     }
+
 }

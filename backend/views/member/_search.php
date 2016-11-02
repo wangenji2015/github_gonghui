@@ -15,15 +15,17 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+<!--    --><?//= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'name') ?>
+<!--    --><?//= $form->field($model, 'name') ?>
 
-    <?= $form->field($model, 'gender') ?>
+    <?= $form->field($model, 'gender')->dropDownList(\common\models\Member::getAllGenders(),['prompt'=>'请选择性别']) ?>
 
     <?= $form->field($model, 'pin_id') ?>
 
     <?= $form->field($model, 'mobile') ?>
+
+    <?= $form->field($model, 'is_do')->dropDownList(\common\models\MemberSearch::isDoArr(),['prompt'=>'选择代办事项'])?>
 
     <?php // echo $form->field($model, 'level_id') ?>
 
