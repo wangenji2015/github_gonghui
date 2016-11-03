@@ -24,9 +24,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'work_danwei')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'station')->textInput() ?>
+    <?= $form->field($model, 'station')->textInput()->dropDownList(\common\models\WorkType::getWorkTypes()) ?>
 
     <?= $form->field($model, 'area_id')->dropDownList(\common\models\Level::getCurrentLevel($level_id)) ?>
+    <?= $form->field($model, 'is_pass')->dropDownList(\common\models\Member::getPassArr()) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

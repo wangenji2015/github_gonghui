@@ -47,8 +47,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="/laws"><i class="fa fa-circle-o"></i> 政策法规</a></li>
-                    <li><a href="/member"><i class="fa fa-circle-o"></i>你问我答</a></li>
-                    <li><a href="/level"><i class="fa fa-circle-o"></i>在线咨询</a></li>
+                    <li><a href="/laws-qa"><i class="fa fa-circle-o"></i>你问我答</a></li>
+                    <li><a href="/lawsonline"><i class="fa fa-circle-o"></i>在线咨询</a></li>
                     <li><a href="/lawyer"><i class="fa fa-circle-o"></i>律师管理</a></li>
                 </ul>
             </li>

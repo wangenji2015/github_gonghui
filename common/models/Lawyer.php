@@ -68,4 +68,13 @@ class Lawyer extends \yii\db\ActiveRecord
 
         return parent::beforeSave($insert);
     }
+
+    public static function getLawyers(){
+        $laws=static::find()->asArray()->all();
+        $laws_arr=[];
+        foreach ($laws as $k => $v){
+            $laws_arr[$v['id']]=$v['name'];
+        }
+        return $laws_arr;
+    }
 }

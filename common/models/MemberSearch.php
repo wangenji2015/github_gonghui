@@ -87,7 +87,6 @@ class MemberSearch extends Member
             ->andFilterWhere(['like', 'pin_id', $this->pin_id])
             ->andFilterWhere(['like', 'mobile', $this->mobile])
             ->andFilterWhere(['like', 'work_danwei', $this->work_danwei]);
-        var_dump($this->id);
 //        var_dump(LevelMember::getIsdoId(Yii::$app->user->identity->level_id));
         if($this->is_do == 2){
             $query->andFilterWhere(['in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)]);
