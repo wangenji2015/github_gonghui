@@ -22,11 +22,11 @@ return [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-//            'site/*',
+            'site/*',
             //这里是允许访问的action
             //controller/action
             // * 表示允许所有，后期会介绍这个
-            '*'
+//            '*'
         ]
     ],
     'components' => [
