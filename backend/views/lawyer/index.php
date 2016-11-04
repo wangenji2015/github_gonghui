@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\LawyerSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Lawyers';
+$this->title = '律师';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lawyer-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Lawyer', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('创建律师', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

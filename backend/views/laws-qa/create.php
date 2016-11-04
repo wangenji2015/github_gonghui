@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\LawsQa */
 
-$this->title = 'Create Laws Qa';
+$this->title = '创建你问我答';
 $this->params['breadcrumbs'][] = ['label' => 'Laws Qas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

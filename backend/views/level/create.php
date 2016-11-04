@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Level */
 
-$this->title = 'Create Level';
+$this->title = '创建级别';
 $this->params['breadcrumbs'][] = ['label' => 'Levels', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

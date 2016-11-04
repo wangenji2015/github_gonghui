@@ -33,13 +33,16 @@ class LawsOnline extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['gh_user_id', 'content'], 'required'],
+            [['content'], 'required'],
             [['gh_user_id', 'lawyer_id', 'create_time', 'reply_time'], 'integer'],
             [['content', 'relpy'], 'string'],
             [['gh_user_name', 'gh_user_mobile'], 'string', 'max' => 255],
         ];
     }
-
+    private static $publicArr=[
+        0=>'不公开',
+        1=>'公开'
+    ];
     /**
      * @inheritdoc
      */
@@ -55,7 +58,12 @@ class LawsOnline extends \yii\db\ActiveRecord
             'lawyer_id' => '律师',
             'create_time' => '发布时间',
             'reply_time' => '回复时间',
+            'is_public'  => '是否公开'
         ];
+    }
+
+    public static function getPublicArr(){
+        return static::$publicArr;
     }
 
     public function beforeSave($insert)

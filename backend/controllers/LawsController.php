@@ -28,6 +28,15 @@ class LawsController extends Controller
             ],
         ];
     }
+    public function actions()
+    {
+
+        return [
+            'Kupload' => [
+                'class' => 'pjkui\kindeditor\KindEditorAction',
+            ]
+        ];
+    }
 
     /**
      * Lists all Laws models.

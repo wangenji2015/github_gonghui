@@ -44,7 +44,7 @@ class LawsonlineSearch extends LawsOnline
         $lawyer_id=Yii::$app->user->identity->lawyer_id;
         $other_level=Yii::$app->user->identity->other_level;
         $level = Yii::$app->user->identity->level_id;
-        if($other_level==1 || $level===0 || $level===1){
+        if($other_level===1 || $level===0 || $level===1){
             $query = LawsOnline::find();
         }else if($lawyer_id && $other_level!==0){
             $query = LawsOnline::find()->where(['lawyer_id'=>$lawyer_id]);

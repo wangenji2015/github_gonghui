@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\LawsOnline */
 
-$this->title = 'Create Laws Online';
+$this->title = '创建在线咨询';
 $this->params['breadcrumbs'][] = ['label' => 'Laws Onlines', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

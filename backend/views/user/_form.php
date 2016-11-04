@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
 <!--    --><?//= $form->field($model, 'auth_key')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password_hash')->textInput(['maxlength' => true])->label("密码") ?>
+    <?= $form->field($model, 'password')->textInput(['maxlength' => true])->label("密码") ?>
 
 <!--    --><?//= $form->field($model, 'password_reset_token')->textInput(['maxlength' => true]) ?>
 
@@ -34,6 +34,7 @@ use yii\widgets\ActiveForm;
         if($user_level===0 || $user_level===1) {
             ?>
             <?= $form->field($model, 'lawyer_id')->textInput()->dropDownList(\common\models\Lawyer::getLawyers(),['prompt'=>"选择律师"]) ?>
+            <?= $form->field($model, 'minder_id')->textInput()->dropDownList(\common\models\Minders::getMinders(),['prompt'=>"选择心理专家"]) ?>
             <?= $form->field($model, 'other_level')->textInput()->dropDownList(\common\models\OtherLevel::getOtherLevel(),['prompt'=>'选择其他职务']) ?>
             <?php
         }
@@ -42,7 +43,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'role_info')->dropDownList(\common\models\User::getAllRoles(),['prompt'=>'请选择赋予的角色']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

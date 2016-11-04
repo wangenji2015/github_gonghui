@@ -5,7 +5,7 @@
                 <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p><?=Yii::$app->user->identity->username?></p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     <li><a href="/admin/permission"><i class="fa fa-circle-o"></i> 权限</a></li>
                     <li><a href="/admin/role"><i class="fa fa-circle-o"></i> 角色</a></li>
                     <li><a href="/admin/assignment"><i class="fa fa-circle-o"></i> 分配</a></li>
-                    <li><a href="/admin/menu"><i class="fa fa-circle-o"></i> 菜单</a></li>
+<!--                    <li><a href="/admin/menu"><i class="fa fa-circle-o"></i> 菜单</a></li>-->
                     <li><a href="/user"><i class="fa fa-circle-o"></i> 用户管理</a></li>
                 </ul>
             </li>
@@ -50,6 +50,17 @@
                     <li><a href="/laws-qa"><i class="fa fa-circle-o"></i>你问我答</a></li>
                     <li><a href="/lawsonline"><i class="fa fa-circle-o"></i>在线咨询</a></li>
                     <li><a href="/lawyer"><i class="fa fa-circle-o"></i>律师管理</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-lock"></i> 心理咨询 <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/mindknowledge"><i class="fa fa-circle-o"></i> 心理知识</a></li>
+                    <li><a href="/mindcase"><i class="fa fa-circle-o"></i>案例精选</a></li>
+                    <li><a href="/mindonline"><i class="fa fa-circle-o"></i>在线咨询</a></li>
+                    <li><a href="/minders"><i class="fa fa-circle-o"></i>心理专家管理</a></li>
                 </ul>
             </li>
         </ul>

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\LawsQaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Laws Qas';
+$this->title = '你问我答';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="laws-qa-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Laws Qa', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('创建', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

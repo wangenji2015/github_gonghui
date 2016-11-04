@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'gh_user_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'gh_user_id')->textInput() ?>
+<!--    --><?//= $form->field($model, 'gh_user_id')->textInput() ?>
 
     <?= $form->field($model, 'gh_user_mobile')->textInput(['maxlength' => true]) ?>
 
@@ -22,14 +22,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'relpy')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'lawyer_id')->textInput()->dropDownList(\common\models\Lawyer::getLawyers(),['prompt'=>'选择律师']) ?>
+    <?php
+    $other_level= Yii::$app->user->identity->other_level;
+    $level= Yii::$app->user->identity->level_id;
+    if($other_level ===1 || $level===0 || $level===1){
+        ?>
+        <?= $form->field($model, 'lawyer_id')->dropDownList(\common\models\Lawyer::getLawyers()) ?>
+        <?= $form->field($model, 'is_public')->dropDownList(\common\models\LawsOnline::getPublicArr(),['prompt'=>'是否公开']) ?>
+        <?php
+    }
+    ?>
 
-    <?= $form->field($model, 'create_time')->textInput() ?>
+<!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
 
-    <?= $form->field($model, 'reply_time')->textInput() ?>
+<!--    --><?//= $form->field($model, 'reply_time')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

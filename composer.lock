@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4c39cd23070920e925672e6bc216dc80",
-    "content-hash": "13b7069d538885b8a7ba3f49924e1c03",
+    "hash": "05f1e535406235f3ce23f38a8829959b",
+    "content-hash": "b0ee83e48e247baa8a7f13d6c9791dca",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -547,6 +547,39 @@
                 "yii"
             ],
             "time": "2016-08-19 13:30:10"
+        },
+        {
+            "name": "pjkui/kindeditor",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pjkui/kindeditor.git",
+                "reference": "a1122cdf94b3fe7fe2b952cd9b5e868bee097b99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pjkui/kindeditor/zipball/a1122cdf94b3fe7fe2b952cd9b5e868bee097b99",
+                "reference": "a1122cdf94b3fe7fe2b952cd9b5e868bee097b99",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pjkui\\kindeditor\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Quinn Pan",
+                    "email": "pjkui@qq.com"
+                }
+            ],
+            "description": "desc",
+            "time": "2016-01-15 03:31:14"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
@@ -3252,7 +3285,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "mdmsoft/yii2-admin": 20
+        "mdmsoft/yii2-admin": 20,
+        "pjkui/kindeditor": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

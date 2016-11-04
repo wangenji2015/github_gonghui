@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\LawsonlineSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Laws Onlines';
+$this->title = '在线咨询';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="laws-online-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Laws Online', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('创建在线咨询', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
