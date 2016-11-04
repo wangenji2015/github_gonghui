@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\MindCase;
-use common\models\MindCaseSearch;
+use common\models\LawsCase;
+use common\models\LawscaseSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * MindcaseController implements the CRUD actions for MindCase model.
+ * LawscaseController implements the CRUD actions for LawsCase model.
  */
-class MindcaseController extends Controller
+class LawscaseController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class MindcaseController extends Controller
     }
 
     /**
-     * Lists all MindCase models.
+     * Lists all LawsCase models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new MindCaseSearch();
+        $searchModel = new LawscaseSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,8 +45,8 @@ class MindcaseController extends Controller
     }
 
     /**
-     * Displays a single MindCase model.
-     * @param integer $id
+     * Displays a single LawsCase model.
+     * @param string $id
      * @return mixed
      */
     public function actionView($id)
@@ -57,13 +57,13 @@ class MindcaseController extends Controller
     }
 
     /**
-     * Creates a new MindCase model.
+     * Creates a new LawsCase model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new MindCase();
+        $model = new LawsCase();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -75,9 +75,9 @@ class MindcaseController extends Controller
     }
 
     /**
-     * Updates an existing MindCase model.
+     * Updates an existing LawsCase model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionUpdate($id)
@@ -94,9 +94,9 @@ class MindcaseController extends Controller
     }
 
     /**
-     * Deletes an existing MindCase model.
+     * Deletes an existing LawsCase model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionDelete($id)
@@ -107,15 +107,15 @@ class MindcaseController extends Controller
     }
 
     /**
-     * Finds the MindCase model based on its primary key value.
+     * Finds the LawsCase model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return MindCase the loaded model
+     * @param string $id
+     * @return LawsCase the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = MindCase::findOne($id)) !== null) {
+        if (($model = LawsCase::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

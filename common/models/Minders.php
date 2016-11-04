@@ -12,6 +12,7 @@ use yii\web\UploadedFile;
  * @property string $mobile
  * @property string $avatar
  * @property string $work_time
+ * @property string $good_at
  */
 class Minders extends \yii\db\ActiveRecord
 {
@@ -30,7 +31,7 @@ class Minders extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'mobile', 'work_time'], 'required'],
-            [['name', 'mobile', 'avatar', 'work_time'], 'string', 'max' => 255],
+            [['name', 'mobile', 'avatar', 'work_time','good_at'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,7 +46,8 @@ class Minders extends \yii\db\ActiveRecord
             'mobile' => '电话',
             'avatar' => '头像',
             'work_time' => '工作时间',
-            'uploader' => '头像照片'
+            'uploader' => '头像照片',
+            'good_at' => '擅长领域(多个用逗号分隔开)'
         ];
     }
 

@@ -121,4 +121,12 @@ class MindknowledgeController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    public function actions()
+    {
+        return [
+            'Kupload' => [
+                'class' => 'pjkui\kindeditor\KindEditorAction',
+            ]
+        ];
+    }
 }

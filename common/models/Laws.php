@@ -31,7 +31,7 @@ class Laws extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content', 'create_at', 'update_at', 'from', 'read_count'], 'required'],
+            [['title', 'from'], 'required'],
             [['content'], 'string'],
             [['create_at', 'update_at', 'read_count'], 'integer'],
             [['title', 'from'], 'string', 'max' => 255],
@@ -53,5 +53,13 @@ class Laws extends \yii\db\ActiveRecord
             'read_count' => '阅读数',
         ];
     }
-
+    public function beforeSave($insert)
+    {
+        if($this->isNewRecord){
+            $this->create_at=time();
+        }else {
+            $this->update_at=time();
+        }
+        return parent::beforeSave($insert);
+    }
 }

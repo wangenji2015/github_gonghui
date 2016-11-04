@@ -30,7 +30,7 @@ class MindCase extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'content', 'from'], 'required'],
+            [['title', 'from'], 'required'],
             [['content'], 'string'],
             [['create_time', 'read_count'], 'integer'],
             [['title', 'from'], 'string', 'max' => 255],

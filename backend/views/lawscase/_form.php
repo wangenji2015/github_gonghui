@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\LawsQa */
+/* @var $model common\models\LawsCase */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="laws-qa-form">
+<div class="laws-case-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -16,11 +16,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',['clientOptions'=>['allowFileManager'=>'true','allowUpload'=>'true']]) ?>
 
-<!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
-
     <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'uploader')->fileInput() ?>
+<!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
+
 <!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
 
     <div class="form-group">

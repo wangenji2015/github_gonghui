@@ -19,6 +19,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'uploader')->fileInput() ?>
 
     <?= $form->field($model, 'work_time')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'good_at')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

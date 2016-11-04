@@ -16,13 +16,13 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'content')->widget('pjkui\kindeditor\Kindeditor',['clientOptions'=>['allowFileManager'=>'true','allowUpload'=>'true']]) ?>
 <!--    --><?//= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'create_at')->textInput() ?>
+<!--    --><?//= $form->field($model, 'create_at')->textInput() ?>
 
-    <?= $form->field($model, 'update_at')->textInput() ?>
+<!--    --><?//= $form->field($model, 'update_at')->textInput() ?>
 
     <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'read_count')->textInput() ?>
+<!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
 
 
 
