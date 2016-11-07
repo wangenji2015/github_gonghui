@@ -30,7 +30,7 @@ class Minders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'mobile', 'work_time'], 'required'],
+            [['name', 'mobile', 'work_time','work_danwei'], 'required'],
             [['name', 'mobile', 'avatar', 'work_time','good_at'], 'string', 'max' => 255],
         ];
     }
@@ -46,6 +46,7 @@ class Minders extends \yii\db\ActiveRecord
             'mobile' => '电话',
             'avatar' => '头像',
             'work_time' => '工作时间',
+            'work_danwei'=>'工作单位',
             'uploader' => '头像照片',
             'good_at' => '擅长领域(多个用逗号分隔开)'
         ];

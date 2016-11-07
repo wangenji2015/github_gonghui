@@ -19,6 +19,9 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'uploader')->fileInput() ?>
 
     <?= $form->field($model, 'work_time')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'work_danwei')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'good_at')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">

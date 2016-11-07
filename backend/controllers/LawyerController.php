@@ -126,4 +126,5 @@ class LawyerController extends Controller
         $model=new Lawyer();
         var_dump(UploadedFile::getInstance($model,'uploader'));
     }
+
 }
