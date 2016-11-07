@@ -39,7 +39,7 @@ use yii\widgets\ActiveForm;
             <?php
         }
     ?>
-    <?= $form->field($model, 'level_id')->dropDownList(\common\models\User::getAllLevels($parent_id),['prompt'=>'请选择级别']) ?>
+    <?= $form->field($model, 'level_id')->dropDownList(\common\models\Level::getUnders($parent_id),['prompt'=>'请选择级别']) ?>
     <?= $form->field($model, 'role_info')->dropDownList(\common\models\User::getAllRoles(),['prompt'=>'请选择赋予的角色']) ?>
 
     <div class="form-group">

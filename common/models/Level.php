@@ -50,6 +50,14 @@ class Level extends \yii\db\ActiveRecord
         foreach ($levels as $k=>$v){
             $levels_arr[$v['id']]=$v['name'];
         }
+        return $levels_arr ? $levels_arr : static::getCurrentLevel(Yii::$app->user->identity->level_id);
+    }
+    public static function getUnders($parent_id){
+        $levels = static::find()->select('id,name')->where(['parent_id'=>$parent_id])->asArray()->all();
+        $levels_arr=array();
+        foreach ($levels as $k=>$v){
+            $levels_arr[$v['id']]=$v['name'];
+        }
         return $levels_arr;
     }
     public static function getCurrentLevel($level_id){

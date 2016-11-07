@@ -32,7 +32,7 @@ class Lawyer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'mobile', 'work_time','work_danwei'], 'required'],
+            [['name', 'mobile', 'work_time','work_danwei','brief'], 'required'],
             [['name', 'mobile', 'avatar', 'work_time','good_at'], 'string', 'max' => 255],
             ['uploader', 'file', 'extensions' => 'png, jpg', 'skipOnEmpty' => true]
         ];
@@ -51,7 +51,8 @@ class Lawyer extends \yii\db\ActiveRecord
             'work_time' => '工作时间',
             'uploader'=>'头像照片',
             'work_danwei'=>'工作单位',
-            'good_at' => '擅长领域(多个用逗号分隔开)'
+            'good_at' => '擅长领域(多个用逗号分隔开)',
+            'brief' => '简介',
         ];
     }
     public function beforeSave($insert)

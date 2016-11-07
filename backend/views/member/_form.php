@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'station')->textInput()->dropDownList(\common\models\WorkType::getWorkTypes()) ?>
 
-    <?= $form->field($model, 'area_id')->dropDownList(\common\models\Level::getCurrentLevel($level_id)) ?>
+    <?= $form->field($model, 'area_id')->dropDownList($model->getCurrentArea()) ?>
     <?= $form->field($model, 'is_pass')->dropDownList(\common\models\Member::getPassArr()) ?>
 
     <div class="form-group">
