@@ -25,7 +25,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'mobile') ?>
 
-    <?= $form->field($model, 'is_do')->dropDownList(\common\models\MemberSearch::isDoArr(),['prompt'=>'选择代办事项'])->label("待办事项")?>
+    <?= $form->field($model, 'is_do')->dropDownList(\common\models\MemberSearch::isDoArr(),['prompt'=>'选择处理状态'])->label("处理状态")?>
 
     <?php // echo $form->field($model, 'level_id') ?>
 

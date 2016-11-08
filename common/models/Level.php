@@ -79,6 +79,16 @@ class Level extends \yii\db\ActiveRecord
 //        return $childs_arr;
         return static::find()->where(['parent_id'=>$level_id])->asArray()->all();
     }
+    /**
+     * 获取一级下属级别节点的ID
+     */
+    public static function getUnderLevelIds($childs){
+        $ids=[];
+        foreach ($childs as $k => $v){
+            $ids[]=intval($v['id']);
+        }
+        return $ids;
+    }
 
     /**
      * 获取所有下属节点

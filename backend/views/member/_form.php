@@ -27,7 +27,19 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'station')->textInput()->dropDownList(\common\models\WorkType::getWorkTypes()) ?>
 
     <?= $form->field($model, 'area_id')->dropDownList($model->getCurrentArea()) ?>
-    <?= $form->field($model, 'is_pass')->dropDownList(\common\models\Member::getPassArr()) ?>
+    <?php
+        $user=new \common\models\User();
+        if($user->getIsLow(Yii::$app->user->identity->level_id)){
+    ?>
+        <?= $form->field($model, 'is_pass')->dropDownList(\common\models\Member::getPassArr()) ?>
+    <?php
+        }else {
+    ?>
+            <?= $form->field($model, 'is_pass')->dropDownList(\common\models\Member::getPassArr(),['disabled'=>'disabled']) ?>
+    <?php
+        }
+    ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

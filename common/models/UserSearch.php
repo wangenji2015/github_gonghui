@@ -41,7 +41,23 @@ class UserSearch extends User
      */
     public function search($params)
     {
-        $query = User::find();
+        $childs=Level::getUnderLevel(Yii::$app->user->identity->level_id);
+        $ids=Level::getUnderLevelIds($childs);
+        $level_id=Yii::$app->user->identity->level_id;
+        $other_level=Yii::$app->user->identity->other_level;
+        $lawyer_id= Yii::$app->user->identity->lawyer_id;
+        $minder_id =Yii::$app->user->identity->minder_id;
+        if($level_id===1 || $level_id===0){
+            $query = User::find();
+        }else if($other_level ===1){
+            $query = User::find()->where(['!=','lawyer_id','']);
+        }else if($other_level===2){
+            $query = User::find()->where(['!=','minder_id','']);
+        }else if($level_id!==1 && $level_id!==0){
+            $query = User::find()->where(['level_id'=>$ids]);
+        }else {
+            $query = User::find()->where(['id'=>0]);
+        }
 
         // add conditions that should always apply here
 

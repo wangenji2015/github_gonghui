@@ -284,4 +284,15 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             return $role_arr;
     }
 
+    /**
+     * 判断是否是最低级别用户(街镇)用户
+     */
+    public function getIsLow($level_id){
+        $childs=Level::find()->where(['parent_id'=>$level_id])->asArray()->all();
+        if($childs){
+            return false;
+        }else {
+            return true;
+        }
+    }
 }

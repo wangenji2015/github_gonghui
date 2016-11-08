@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindeEditor',['clientOptions'=>['allowFileManager'=>'true','allowUpload'=>'true']]) ?>
+    <?= $form->field($model, 'content')->widget('pjkui\kindeditor\KindEditor',['clientOptions'=>['allowFileManager'=>'true','allowUpload'=>'true']]) ?>
 
     <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
 
