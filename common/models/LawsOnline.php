@@ -34,7 +34,7 @@ class LawsOnline extends \yii\db\ActiveRecord
     {
         return [
             [['content'], 'required'],
-            [['gh_user_id', 'lawyer_id', 'create_time', 'reply_time'], 'integer'],
+            [['gh_user_id', 'lawyer_id', 'create_time', 'reply_time','is_public'], 'integer'],
             [['content', 'relpy'], 'string'],
             [['gh_user_name', 'gh_user_mobile'], 'string', 'max' => 255],
         ];

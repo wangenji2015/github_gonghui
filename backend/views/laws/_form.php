@@ -21,6 +21,7 @@ use yii\widgets\ActiveForm;
 <!--    --><?//= $form->field($model, 'update_at')->textInput() ?>
 
     <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'is_new')->dropDownList(\common\models\Laws::getIsNewArr()) ?>
 
 <!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
 

@@ -33,7 +33,7 @@ class Laws extends \yii\db\ActiveRecord
         return [
             [['title', 'from'], 'required'],
             [['content'], 'string'],
-            [['create_at', 'update_at', 'read_count'], 'integer'],
+            [['create_at', 'update_at', 'read_count','is_new'], 'integer'],
             [['title', 'from'], 'string', 'max' => 255],
         ];
     }
@@ -51,7 +51,15 @@ class Laws extends \yii\db\ActiveRecord
             'update_at' => '更新时间',
             'from' => '来源',
             'read_count' => '阅读数',
+            'is_new'=>'是否为最新',
         ];
+    }
+    private static $is_newArr=[
+        0=>'否',
+        1=>'是'
+    ];
+    public static function getIsNewArr(){
+        return static::$is_newArr;
     }
     public function beforeSave($insert)
     {

@@ -26,9 +26,25 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'gh_user_name',
-            'gh_user_id',
-            'gh_user_mobile',
-            'content:ntext',
+//            'gh_user_id',
+//            'gh_user_mobile',
+            [
+                'label'=>"是否回复",
+                'value'=>function($model){
+                    if($model->relpy==""){
+                        return "未回复";
+                    }else {
+                        return "已回复";
+                    }
+                }
+            ],
+//            'content:ntext',
+            [
+                'label'=>"内容",
+                'value'=>function($model){
+                    return mb_substr($model->content,0,50);
+                }
+            ],
             // 'relpy:ntext',
             // 'minder_id',
             // 'create_time:datetime',
