@@ -50,13 +50,20 @@ class MemberSearch extends Member
      */
     public function search($params)
     {
-        $query = Member::find();
+
 
         // add conditions that should always apply here
 
-        $childs=Level::getAllUnderLevel(Yii::$app->user->identity->level_id);
-        $ids=Level::getLevelsArr($childs);
-        $ids[] = Level::getBaseId(Yii::$app->user->identity->level_id);
+
+        $level_id=Yii::$app->user->identity->level_id;
+        if($level_id===0){//是admin的话
+            $query = Member::find();
+        }else {
+            $childs=Level::getAllUnderLevel(Yii::$app->user->identity->level_id);
+            $ids=Level::getLevelsArr($childs);
+            $ids[] = Level::getBaseId(Yii::$app->user->identity->level_id);
+            $query = Member::find()->where(['level_id'=>$ids]);
+        }
         $dataProvider = new ActiveDataProvider([
                 'query' => $query,
                 'pagination' => [
@@ -75,7 +82,6 @@ class MemberSearch extends Member
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'level_id'=>$ids,
             'id' => $this->id,
             'gender' => $this->gender,
 //            'level_id' => $this->level_id,
