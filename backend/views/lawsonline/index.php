@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label'=>"内容",
                 'value'=>function($model){
-                    return mb_substr($model->content,0,50);
+                    return mb_substr($model->content,0,25);
                 }
             ],
             // 'relpy:ntext',
