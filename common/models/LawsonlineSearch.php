@@ -80,8 +80,7 @@ class LawsonlineSearch extends LawsOnline
         $query->andFilterWhere(['like', 'gh_user_name', $this->gh_user_name])
             ->andFilterWhere(['like', 'gh_user_mobile', $this->gh_user_mobile])
             ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'relpy', $this->relpy]);
-
+            ->andFilterWhere(['like', 'relpy', $this->relpy])->orderBy(['id'=>SORT_DESC]);
         return $dataProvider;
     }
 }

@@ -92,12 +92,12 @@ class MemberSearch extends Member
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'pin_id', $this->pin_id])
             ->andFilterWhere(['like', 'mobile', $this->mobile])
-            ->andFilterWhere(['like', 'work_danwei', $this->work_danwei]);
+            ->andFilterWhere(['like', 'work_danwei', $this->work_danwei])->orderBy(['id'=>SORT_DESC]);
 //        var_dump(LevelMember::getIsdoId(Yii::$app->user->identity->level_id));
         if($this->is_do == 2){
-            $query->andFilterWhere(['in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)]);
+            $query->andFilterWhere(['in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)])->orderBy(['id'=>SORT_DESC]);
         }else if($this->is_do == 1){
-            $query->andFilterWhere(['not in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)]);
+            $query->andFilterWhere(['not in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)])->orderBy(['id'=>SORT_DESC]);
         }
 
         return $dataProvider;
