@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return mb_substr($model->content,0,25);
                 }
             ],
+
             // 'relpy:ntext',
             // 'lawyer_id',
             // 'create_time:datetime',
