@@ -3311,12 +3311,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/mdmsoft/yii2-admin.git",
-            "reference": "e2b3eea3a4b685f7802f6b84cfa3affe1ba5b6dc"
+            "reference": "624338912074ce7c218f838a940fbfed05ae47db"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/e2b3eea3a4b685f7802f6b84cfa3affe1ba5b6dc",
-            "reference": "e2b3eea3a4b685f7802f6b84cfa3affe1ba5b6dc",
+            "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/624338912074ce7c218f838a940fbfed05ae47db",
+            "reference": "624338912074ce7c218f838a940fbfed05ae47db",
             "shasum": ""
         },
         "require": {
@@ -3328,7 +3328,7 @@
         "suggest": {
             "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
         },
-        "time": "2016-08-19 13:30:10",
+        "time": "2016-11-09 23:09:47",
         "type": "yii2-extension",
         "extra": {
             "branch-alias": {

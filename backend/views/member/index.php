@@ -35,6 +35,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'pin_id',
             'mobile',
             [
+                'label'=>'申请时间',
+                'value'=>function($model){
+                    return date("Y-m-d H:i:s",$model->create_time);
+                }
+            ],
+            [
                 'label'=>"所属级别",
                 'value'=>function($model){
                     return $model->level->name;

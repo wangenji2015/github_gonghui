@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d4a9ce00d0c2358f64f39c71608d06e4",
+    "hash": "05f1e535406235f3ce23f38a8829959b",
     "content-hash": "b0ee83e48e247baa8a7f13d6c9791dca",
     "packages": [
         {
@@ -496,12 +496,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mdmsoft/yii2-admin.git",
-                "reference": "e2b3eea3a4b685f7802f6b84cfa3affe1ba5b6dc"
+                "reference": "624338912074ce7c218f838a940fbfed05ae47db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/e2b3eea3a4b685f7802f6b84cfa3affe1ba5b6dc",
-                "reference": "e2b3eea3a4b685f7802f6b84cfa3affe1ba5b6dc",
+                "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/624338912074ce7c218f838a940fbfed05ae47db",
+                "reference": "624338912074ce7c218f838a940fbfed05ae47db",
                 "shasum": ""
             },
             "require": {
@@ -546,7 +546,7 @@
                 "rbac",
                 "yii"
             ],
-            "time": "2016-08-19 13:30:10"
+            "time": "2016-11-09 23:09:47"
         },
         {
             "name": "pjkui/kindeditor",

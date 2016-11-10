@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'gh_user_name',
 //            'gh_user_id',
 //            'gh_user_mobile',
@@ -36,6 +36,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     }else {
                         return "已回复";
                     }
+                }
+            ],
+            [
+                'label'=>'咨询时间',
+                'value'=>function($model){
+                    return date("Y-m-d H:i:s",$model->create_time);
                 }
             ],
 //            'content:ntext',
