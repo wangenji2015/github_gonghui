@@ -39,6 +39,21 @@ use yii\widgets\ActiveForm;
             <?php
         }
     ?>
+    <?php
+    $other_level=Yii::$app->user->identity->other_level;
+    if($other_level===1) {
+    ?>
+        <?= $form->field($model, 'lawyer_id')->textInput()->dropDownList(\common\models\Lawyer::getLawyers(),['prompt'=>"选择律师"]) ?>
+    <?php
+    }
+    ?>
+    <?php
+    if($other_level===2) {
+        ?>
+        <?= $form->field($model, 'minder_id')->textInput()->dropDownList(\common\models\Minders::getMinders(),['prompt'=>"选择心理专家"]) ?>
+        <?php
+    }
+    ?>
     <?= $form->field($model, 'level_id')->dropDownList(\common\models\Level::getUnders($parent_id),['prompt'=>'请选择级别']) ?>
     <?= $form->field($model, 'role_info')->dropDownList(\common\models\User::getAllRoles(),['prompt'=>'请选择赋予的角色']) ?>
 
