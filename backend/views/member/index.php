@@ -21,10 +21,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+//        'layout'=>"{sorter}\n{summary}\n{items}\n{pager}",
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-//            'id',
+            'id',
             'name',
             [
                 'label'=>"性别",
@@ -47,9 +48,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
-                'label'=>"单位所在区域",
+                'label'=>"工作单位",
                 'value'=>function($model){
-                    return $model->area->name;
+                    return $model->work_danwei;
                 }
             ],
             // 'level_id',

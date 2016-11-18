@@ -41,7 +41,13 @@ class LevelSearch extends Level
      */
     public function search($params)
     {
-        $query = Level::find();
+        $level_id=Yii::$app->user->identity->level_id;
+        if($level_id===1 || $level_id===0){
+            $query = Level::find();
+        }else if($level_id !==0 && $level_id !==1){
+            $query = Level::find()->where(['parent_id'=>$level_id]);
+        }
+
 
         // add conditions that should always apply here
 
