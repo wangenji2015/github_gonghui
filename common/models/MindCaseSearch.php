@@ -66,7 +66,7 @@ class MindCaseSearch extends MindCase
 
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'from', $this->from]);
+            ->andFilterWhere(['like', 'from', $this->from])->orderBy(['id'=>SORT_DESC]);
 
         return $dataProvider;
     }
