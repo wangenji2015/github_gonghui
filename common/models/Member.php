@@ -55,7 +55,7 @@ class Member extends \yii\db\ActiveRecord
             'work_danwei' => '工作单位',
             'station' => '岗位或工种',
             'area_id' => '单位所属区域',
-            'is_pass' => '是否通过',
+            'is_pass' => '是否准许入会',
         ];
     }
     private static $allGenders=[
@@ -66,8 +66,8 @@ class Member extends \yii\db\ActiveRecord
         return static::$allGenders;
     }
     private static $passArr=[
-        0=>'未通过',
-        1=>'已通过'
+        0=>'不准许入会',
+        1=>'准许入会'
     ];
     public static function getPassArr(){
         return static::$passArr;

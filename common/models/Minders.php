@@ -31,6 +31,8 @@ class Minders extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'mobile', 'work_time','work_danwei','brief'], 'required'],
+            ['sort','integer'],
+            ['sort','default','value'=>0],
             [['name', 'mobile', 'avatar', 'work_time','good_at'], 'string', 'max' => 255],
         ];
     }
@@ -49,7 +51,8 @@ class Minders extends \yii\db\ActiveRecord
             'work_danwei'=>'工作单位',
             'uploader' => '头像照片',
             'good_at' => '擅长领域(多个用逗号分隔开)',
-            'brief' => '简介'
+            'brief' => '简介',
+            'sort'=>'排序'
         ];
     }
 

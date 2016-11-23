@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
 <!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
 <!---->
 <!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
+    <?= $form->field($model, 'sort')->textInput(['maxlength' => true]) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

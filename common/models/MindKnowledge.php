@@ -32,7 +32,8 @@ class MindKnowledge extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['content'], 'string'],
-            [['create_time', 'read_count'], 'integer'],
+            [['create_time', 'read_count','sort'], 'integer'],
+            ['sort','default','value'=>0],
             [['title', 'from'], 'string', 'max' => 255],
         ];
     }
@@ -49,6 +50,7 @@ class MindKnowledge extends \yii\db\ActiveRecord
             'create_time' => '发布时间',
             'from' => '来源',
             'read_count' => '阅读数',
+            'sort'=>'排序'
         ];
     }
     public function beforeSave($insert)

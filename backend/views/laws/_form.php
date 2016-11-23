@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'is_new')->dropDownList(\common\models\Laws::getIsNewArr()) ?>
 
 <!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
-
+    <?= $form->field($model, 'sort')->textInput(['maxlength' => true]) ?>
 
 
     <div class="form-group">

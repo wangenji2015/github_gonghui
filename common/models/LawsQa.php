@@ -35,8 +35,9 @@ class LawsQa extends \yii\db\ActiveRecord
         return [
             [['title','from'], 'required'],
             [['content'], 'string'],
-            [['create_time', 'read_count'], 'integer'],
+            [['create_time', 'read_count','sort'], 'integer'],
             [['title', 'from'], 'string', 'max' => 255],
+            ['sort','default','value'=>0],
             ['uploader', 'file', 'extensions' => 'png, jpg', 'skipOnEmpty' => true],
             ['img','string','max'=>255]
         ];
@@ -54,7 +55,8 @@ class LawsQa extends \yii\db\ActiveRecord
             'create_time' => '发布时间',
             'from' => '来源',
             'read_count' => '阅读数',
-            'uploader' => '列表缩略图'
+            'uploader' => '列表缩略图',
+            'sort'=>'排序'
         ];
     }
     public function beforeSave($insert)

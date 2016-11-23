@@ -21,7 +21,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'uploader')->fileInput() ?>
-<!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
+
+    <?= $form->field($model, 'sort')->textInput(['maxlength' => true]) ?>
+
+    <!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? '创建' : '更新', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -18,7 +18,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'from')->textInput(['maxlength' => true]) ?>
 
-<!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
+    <?= $form->field($model, 'sort')->textInput(['maxlength' => true]) ?>
+
+    <!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
 
 <!--    --><?//= $form->field($model, 'read_count')->textInput() ?>
 
