@@ -83,7 +83,7 @@ class Member extends \yii\db\ActiveRecord
     }
     public function afterSave($insert, $changedAttributes)
     {
-        if(!$this->isNewRecord){
+        if(!$insert){
             $levelMember=new LevelMember();
             $level_id=Yii::$app->user->identity->level_id;
             $do_info=$levelMember::find()->andWhere(['member_id'=>$this->id])

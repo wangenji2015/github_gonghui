@@ -38,6 +38,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="/member"><i class="fa fa-circle-o"></i>入会信息</a></li>
+                    <li><a href="/changemember"><i class="fa fa-circle-o"></i>转会信息</a></li>
                     <li><a href="/level"><i class="fa fa-circle-o"></i>级别管理</a></li>
                 </ul>
             </li>

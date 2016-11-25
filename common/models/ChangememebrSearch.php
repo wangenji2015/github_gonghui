@@ -5,28 +5,29 @@ namespace common\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\Member;
-use common\models\LevelMember;
+use common\models\ChangeMember;
 
 /**
- * MemberSearch represents the model behind the search form about `common\models\Member`.
+ * ChangememebrSearch represents the model behind the search form about `common\models\ChangeMember`.
  */
-class MemberSearch extends Member
+class ChangememebrSearch extends ChangeMember
 {
     public $is_do;
-
     private static $is_do_arr=[
-        1=>'未处理',
-        2=>'已处理',
+        1=>"未处理",
+        2=>'已处理'
     ];
+    public static function getIsdoArr(){
+        return static::$is_do_arr;
+    }
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'gender', 'level_id', 'station', 'area_id','is_do'], 'integer'],
-            [['name', 'pin_id', 'mobile', 'work_danwei','is_do'], 'safe'],
+            [['id', 'gender', 'area_id', 'create_time', 'is_pass','is_do'], 'integer'],
+            [['name', 'pin_id', 'mobile', 'origin_gh', 'work_danwei','is_do'], 'safe'],
         ];
     }
 
@@ -38,9 +39,7 @@ class MemberSearch extends Member
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
-    public static function isDoArr(){
-        return static::$is_do_arr;
-    }
+
     /**
      * Creates data provider instance with search query applied
      *
@@ -50,28 +49,22 @@ class MemberSearch extends Member
      */
     public function search($params)
     {
-
-
-        // add conditions that should always apply here
-
-
         $level_id=Yii::$app->user->identity->level_id;
         if($level_id===0){//是admin的话
-            $query = Member::find();
+            $query = ChangeMember::find();
         }else {
             $childs=Level::getAllUnderLevel(Yii::$app->user->identity->level_id);
             $ids=Level::getLevelsArr($childs);
-//            $ids[] = Level::getBaseId(Yii::$app->user->identity->level_id);
-            $ids[]= Yii::$app->user->identity->level_id;
-            $query = Member::find()->where(['level_id'=>$ids]);
+//            $ids[] = Level::getBaseId(Yii::$app->user->identity->level_id);//多余
+            $ids[]=Yii::$app->user->identity->level_id;
+            $query = ChangeMember::find()->where(['level_id'=>$ids]);
         }
+
+        // add conditions that should always apply here
+
         $dataProvider = new ActiveDataProvider([
-                'query' => $query,
-                'pagination' => [
-                    'pageSize' => 20
-                ]
-            ]
-        );
+            'query' => $query,
+        ]);
 
         $this->load($params);
 
@@ -85,23 +78,23 @@ class MemberSearch extends Member
         $query->andFilterWhere([
             'id' => $this->id,
             'gender' => $this->gender,
-//            'level_id' => $this->level_id,
-            'station' => $this->station,
             'area_id' => $this->area_id,
+            'create_time' => $this->create_time,
+            'is_pass' => $this->is_pass,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'pin_id', $this->pin_id])
             ->andFilterWhere(['like', 'mobile', $this->mobile])
+            ->andFilterWhere(['like', 'origin_gh', $this->origin_gh])
             ->andFilterWhere(['like', 'work_danwei', $this->work_danwei])->orderBy(['id'=>SORT_DESC]);
-//        var_dump(LevelMember::getIsdoId(Yii::$app->user->identity->level_id));
-        if($this->is_do == 2){
-            $query->andFilterWhere(['in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)])->orderBy(['id'=>SORT_DESC]);
-        }else if($this->is_do == 1){
-            $query->andFilterWhere(['not in','id',LevelMember::getIsdoId(Yii::$app->user->identity->level_id)])->orderBy(['id'=>SORT_DESC]);
+        if($this->is_do==1){
+            $query->andFilterWhere(['not in','id',LevelChange::getIsDoIds(Yii::$app->user->identity->level_id)])->orderBy(['id'=>SORT_DESC]);
+        }else if($this->is_do==2){
+            $query->andFilterWhere(['in','id',LevelChange::getIsDoIds(Yii::$app->user->identity->level_id)])->orderBy(['id'=>SORT_DESC]);
         }
+
 
         return $dataProvider;
     }
-
 }
