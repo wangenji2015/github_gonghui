@@ -119,4 +119,20 @@ class Level extends \yii\db\ActiveRecord
     public static function getBaseId($level_id){
         return static::findOne(['id'=>$level_id])->id;
     }
+
+    /**
+     * 获取当前级别以及下属级别
+     */
+    public static function getCurrentAndUnder(){
+        $level_id=Yii::$app->user->identity->level_id;
+        $levels_arr=array();
+        $levels=static::find()->select("id,name")->where(['id'=>$level_id])->asArray()->one();
+        $levels_arr[$levels['id']]=$levels['name'];
+
+        $levels = static::find()->select('id,name')->where(['parent_id'=>$level_id])->asArray()->all();
+        foreach ($levels as $k=>$v){
+            $levels_arr[$v['id']]=$v['name'];
+        }
+        return $levels_arr;
+    }
 }

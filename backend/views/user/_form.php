@@ -42,8 +42,20 @@ use yii\widgets\ActiveForm;
         <?php
     }
     ?>
-    <?= $form->field($model, 'level_id')->dropDownList(\common\models\Level::getUnders($parent_id),['prompt'=>'请选择级别']) ?>
-    <?= $form->field($model, 'role_info')->dropDownList(\common\models\User::getAllRoles(),['prompt'=>'请选择赋予的角色']) ?>
+    <?php
+        if($model->isNewRecord) {
+            ?>
+            <?= $form->field($model, 'level_id')->dropDownList(\common\models\Level::getUnders($parent_id), ['prompt' => '请选择级别']) ?>
+            <!--    --><?//= $form->field($model, 'role_info')->dropDownList(\common\models\User::getAllRoles(),['prompt'=>'请选择赋予的角色'])
+            ?>
+            <?php
+        }else {
+            ?>
+            <?= $form->field($model, 'level_id')->dropDownList(\common\models\Level::getCurrentAndUnder(), ['prompt' => '请选择级别']) ?>
+            <?php
+        }
+    ?>
+    <?= $form->field($model, 'user_permission')->checkboxList(\common\models\UserPermission::getPms()) ?>
 <!--    --><?//= $form->field($model, 'other_level')->textInput()->dropDownList(\common\models\OtherLevel::getOtherLevel(),['prompt'=>'职务']) ?>
 <!--    --><?//= $form->field($model, 'level_id')->dropDownList(\common\models\Level::getUnders($parent_id),['prompt'=>'关联级别','style'=>'display:none'])->label(false) ?>
 <!--    --><?//= $form->field($model, 'lawyer_id')->textInput()->dropDownList(\common\models\Lawyer::getLawyers(),['prompt'=>"关联律师",'style'=>'display:none'])->label(false) ?>

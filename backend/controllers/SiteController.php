@@ -1,7 +1,10 @@
 <?php
 namespace backend\controllers;
 
+use common\models\UserPermission;
+use mdm\admin\models\Assignment;
 use Yii;
+use yii\rbac\Permission;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -95,4 +98,5 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
 }
