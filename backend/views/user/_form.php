@@ -55,6 +55,14 @@ use yii\widgets\ActiveForm;
             <?php
         }
     ?>
+    <?php
+        if($user_level===1 || $user_level===0){
+            ?>
+            <?= $form->field($model, 'mysay_level')->dropDownList(\common\models\MysayLevel::mySayLevel(), ['prompt' => '请选择我有话说级别']) ?>
+            <?php
+        }
+    ?>
+
     <?= $form->field($model, 'user_permission')->checkboxList(\common\models\UserPermission::getPms()) ?>
 <!--    --><?//= $form->field($model, 'other_level')->textInput()->dropDownList(\common\models\OtherLevel::getOtherLevel(),['prompt'=>'职务']) ?>
 <!--    --><?//= $form->field($model, 'level_id')->dropDownList(\common\models\Level::getUnders($parent_id),['prompt'=>'关联级别','style'=>'display:none'])->label(false) ?>

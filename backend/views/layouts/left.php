@@ -66,6 +66,17 @@
                     <li><a href="/minders"><i class="fa fa-circle-o"></i>心理专家管理</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-lock"></i> 我有话说 <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/mysay"><i class="fa fa-circle-o"></i> 我有话说</a></li>
+                    <li><a href="/mysaylevel"><i class="fa fa-circle-o"></i>我有话说-发往地管理</a></li>
+                    <li><a href="/mysaytype"><i class="fa fa-circle-o"></i>我有话说-类别管理</a></li>
+                    <li><a href="/mysayaddress"><i class="fa fa-circle-o"></i>我有话说-事发地管理</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
 </aside>

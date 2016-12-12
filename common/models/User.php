@@ -62,6 +62,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             ['level_id','integer'],
             ['lawyer_id','integer'],
             ['minder_id','integer'],
+            ['mysay_level','integer'],
+            ['mysay_level','default','value'=>0],
 //            ['role_info','required'],
             ['password','string'],
             ['user_permission','required']
@@ -96,7 +98,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'minder_id'=>'关联心理专家',
             'other_level'=>'其他职务',
             'role_info' => '赋予的角色',
-            'user_permission'=>'权限分配'
+            'user_permission'=>'权限分配',
+            'mysay_level'=>'我有话说级别'
         ];
     }
     public static function getAllLevels($parent_id){
