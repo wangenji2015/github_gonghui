@@ -7,17 +7,13 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\MysaySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Mysays';
+$this->title = '我有话说';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mysay-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Mysay', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,

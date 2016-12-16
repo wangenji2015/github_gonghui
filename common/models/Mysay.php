@@ -40,7 +40,7 @@ class Mysay extends \yii\db\ActiveRecord
         return [
             [['user_id', 'user_name', 'mobile', 'title', 'level_id', 'address', 'type', 'unit', 'question', 'reply', 'create_time', 'reply_time', 'is_public'], 'required'],
             [['user_id', 'level_id', 'type', 'create_time', 'reply_time', 'is_public','address'], 'integer'],
-            [['question', 'reply'], 'string'],
+            [['question', 'reply','reply_user_name'], 'string'],
             [['user_name', 'mobile', 'title', 'address', 'unit'], 'string', 'max' => 255],
         ];
     }
@@ -64,6 +64,7 @@ class Mysay extends \yii\db\ActiveRecord
             'reply' => '回复',
             'create_time' => '创建时间',
             'reply_time' => '回复时间',
+            'reply_user_name'=>'回帖人',
             'is_public' => '是否公开',
         ];
     }

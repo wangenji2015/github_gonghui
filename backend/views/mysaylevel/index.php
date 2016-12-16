@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\MysaylevelSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Mysay Levels';
+$this->title = '我有话说--发往地管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mysay-level-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Mysay Level', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增发往地', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

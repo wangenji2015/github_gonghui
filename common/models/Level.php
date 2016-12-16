@@ -28,7 +28,7 @@ class Level extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'parent_id'], 'required'],
-            [['parent_id'], 'integer'],
+            [['parent_id','depart_id'], 'integer'],
             [['name'], 'string', 'max' => 255],
         ];
     }
@@ -42,6 +42,7 @@ class Level extends \yii\db\ActiveRecord
             'id' => '自增ID',
             'name' => '级别名称',
             'parent_id' => '上级级别',
+            'depart_id'=>'关联工会(用于查看工会会员注册情况)'
         ];
     }
     public static function getAllLevels($parent_id){

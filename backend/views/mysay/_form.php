@@ -31,6 +31,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'question')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'reply')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'reply_user_name')->textInput(['maxlength' => true]) ?>
 
 <!--    --><?//= $form->field($model, 'create_time')->textInput() ?>
 <!---->
@@ -39,7 +40,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'is_public')->dropDownList(\common\models\Mysay::getPublicArr()) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '新增' : '修改', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
