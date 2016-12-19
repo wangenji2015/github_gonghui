@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\MysayAddress */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Mysay Addresses', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '我有话说--事发地管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mysay-address-view">

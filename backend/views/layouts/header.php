@@ -235,10 +235,10 @@ use yii\helpers\Html;
                             <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
                                  alt="User Image"/>
 
-                            <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
-                            </p>
+<!--                            <p>-->
+<!--                                Alexander Pierce - Web Developer-->
+<!--                                <small>Member since Nov. 2012</small>-->
+<!--                            </p>-->
                         </li>
                         <!-- Menu Body -->
 <!--                        <li class="user-body">-->

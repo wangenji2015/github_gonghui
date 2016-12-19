@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Lawyer */
 
 $this->title = '更新律师: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Lawyers', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '律师管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

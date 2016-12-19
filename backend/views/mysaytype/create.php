@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\MysayType */
 
 $this->title = 'Create Mysay Type';
-$this->params['breadcrumbs'][] = ['label' => 'Mysay Types', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '我有话说--类别管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mysay-type-create">

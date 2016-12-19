@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Lawyer */
 
 $this->title = '创建律师';
-$this->params['breadcrumbs'][] = ['label' => 'Lawyers', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '律师管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lawyer-create">

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Level */
 
 $this->title = '更新级别: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Levels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '级别管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

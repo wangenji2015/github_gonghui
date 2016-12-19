@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Minders */
 
 $this->title = '创建心理专家';
-$this->params['breadcrumbs'][] = ['label' => 'Minders', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '心理专家管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="minders-create">

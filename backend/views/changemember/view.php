@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\ChangeMember */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Change Members', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '转会信息', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="change-member-view">

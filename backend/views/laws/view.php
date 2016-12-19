@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Laws */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Laws', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '政策法规', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="laws-view">

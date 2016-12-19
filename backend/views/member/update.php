@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Member */
 
 $this->title = '更新信息: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Members', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '入会管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

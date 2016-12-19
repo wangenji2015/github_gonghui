@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\MindKnowledge */
 
 $this->title = '创建心理知识';
-$this->params['breadcrumbs'][] = ['label' => 'Mind Knowledges', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '心理知识', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mind-knowledge-create">

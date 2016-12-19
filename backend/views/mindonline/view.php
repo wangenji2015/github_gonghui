@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\MindOnline */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Mind Onlines', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '在线咨询', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mind-online-view">

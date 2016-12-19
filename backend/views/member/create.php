@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\Member */
 
 $this->title = '创建信息';
-$this->params['breadcrumbs'][] = ['label' => 'Members', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '入会管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="member-create">

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Lawyer */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Lawyers', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '律师管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="lawyer-view">

@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\LawsOnline */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Laws Onlines', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '在线咨询', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="laws-online-view">

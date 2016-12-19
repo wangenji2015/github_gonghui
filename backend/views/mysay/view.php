@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Mysay */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Mysays', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '我有话说', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mysay-view">

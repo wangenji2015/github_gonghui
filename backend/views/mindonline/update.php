@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\MindOnline */
 
 $this->title = '更新在线咨询: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Mind Onlines', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '在线咨询', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

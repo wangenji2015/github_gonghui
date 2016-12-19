@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\MindKnowledge */
 
 $this->title = '更新心理知识: ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Mind Knowledges', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '心理知识', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

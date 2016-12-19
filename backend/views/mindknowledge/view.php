@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\MindKnowledge */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Mind Knowledges', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '心理知识', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="mind-knowledge-view">

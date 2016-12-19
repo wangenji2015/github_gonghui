@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Level */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Levels', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '级别管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="level-view">

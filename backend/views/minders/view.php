@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Minders */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Minders', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '心理专家管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="minders-view">

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\MysayType */
 
 $this->title = 'Update Mysay Type: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Mysay Types', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '我有话说--类别管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

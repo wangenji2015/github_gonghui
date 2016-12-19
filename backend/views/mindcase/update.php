@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model common\models\MindCase */
 
 $this->title = '更新案例: ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Mind Cases', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '案例精选', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

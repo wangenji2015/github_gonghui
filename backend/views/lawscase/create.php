@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\LawsCase */
 
 $this->title = '创建案例分析';
-$this->params['breadcrumbs'][] = ['label' => 'Laws Cases', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '案例分析', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="laws-case-create">

@@ -6,7 +6,7 @@
             </div>
             <div class="pull-left info">
                 <p><?=Yii::$app->user->identity->username?></p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
             </div>
         </div>
         <form action="#" method="get" class="sidebar-form">
@@ -24,10 +24,10 @@
                     <i class="fa fa-lock"></i> 权限控制 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/route"><i class="fa fa-circle-o"></i> 路由</a></li>
-                    <li><a href="/admin/permission"><i class="fa fa-circle-o"></i> 权限</a></li>
-                    <li><a href="/admin/role"><i class="fa fa-circle-o"></i> 角色</a></li>
-                    <li><a href="/admin/assignment"><i class="fa fa-circle-o"></i> 分配</a></li>
+<!--                    <li><a href="/admin/route"><i class="fa fa-circle-o"></i> 路由</a></li>-->
+<!--                    <li><a href="/admin/permission"><i class="fa fa-circle-o"></i> 权限</a></li>-->
+<!--                    <li><a href="/admin/role"><i class="fa fa-circle-o"></i> 角色</a></li>-->
+<!--                    <li><a href="/admin/assignment"><i class="fa fa-circle-o"></i> 分配</a></li>-->
 <!--                    <li><a href="/admin/menu"><i class="fa fa-circle-o"></i> 菜单</a></li>-->
                     <li><a href="/user"><i class="fa fa-circle-o"></i> 用户管理</a></li>
                 </ul>

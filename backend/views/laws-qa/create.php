@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model common\models\LawsQa */
 
 $this->title = '创建你问我答';
-$this->params['breadcrumbs'][] = ['label' => 'Laws Qas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '你问我答', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="laws-qa-create">
