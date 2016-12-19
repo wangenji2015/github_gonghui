@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\GhdepartSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Gh Departs';
+$this->title = '会员注册统计';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="gh-depart-index">
@@ -15,9 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Gh Depart', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+<!--    <p>-->
+<!--        --><?//= Html::a('Create Gh Depart', ['create'], ['class' => 'btn btn-success']) ?>
+<!--    </p>-->
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,

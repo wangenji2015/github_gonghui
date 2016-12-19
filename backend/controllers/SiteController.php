@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use common\models\Level;
 use common\models\UserPermission;
 use mdm\admin\models\Assignment;
 use Yii;

@@ -95,6 +95,7 @@ class Level extends \yii\db\ActiveRecord
      * 获取所有下属节点
      */
     public static function getAllUnderLevel($level_id){
+//        set_time_limit(0);
         static $childs=array();
         $one_under_levels=static::getUnderLevel($level_id);
         $childs[]=$one_under_levels;

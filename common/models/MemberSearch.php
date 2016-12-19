@@ -56,7 +56,7 @@ class MemberSearch extends Member
 
 
         $level_id=Yii::$app->user->identity->level_id;
-        if($level_id===0){//是admin的话
+        if($level_id===0 || $level_id===1){//是admin的话或者是市工会
             $query = Member::find();
         }else {
             $childs=Level::getAllUnderLevel(Yii::$app->user->identity->level_id);
