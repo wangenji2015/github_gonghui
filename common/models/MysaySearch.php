@@ -81,7 +81,7 @@ class MysaySearch extends Mysay
             ->andFilterWhere(['like', 'address', $this->address])
             ->andFilterWhere(['like', 'unit', $this->unit])
             ->andFilterWhere(['like', 'question', $this->question])
-            ->andFilterWhere(['like', 'reply', $this->reply]);
+            ->andFilterWhere(['like', 'reply', $this->reply])->orderBy(['id'=>SORT_DESC]);
 
         return $dataProvider;
     }
