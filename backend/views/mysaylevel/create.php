@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\MysayLevel */
 
-$this->title = 'Create Mysay Level';
+$this->title = '新建发往地';
 $this->params['breadcrumbs'][] = ['label' => '我有话说--发往地管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

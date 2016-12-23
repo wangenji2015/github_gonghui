@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\MysayAddress */
 
-$this->title = 'Create Mysay Address';
+$this->title = '新建事发地';
 $this->params['breadcrumbs'][] = ['label' => '我有话说--事发地管理', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
