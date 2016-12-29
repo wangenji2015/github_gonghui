@@ -15,10 +15,18 @@ class MysaySearch extends Mysay
     /**
      * @inheritdoc
      */
+    public $is_reply;
+    private static $reply_arr=[
+        1=>"未回复",
+        2=>"已回复"
+    ];
+    public static function get_is_reply(){
+        return static::$reply_arr;
+    }
     public function rules()
     {
         return [
-            [['id', 'user_id', 'level_id', 'type', 'create_time', 'reply_time', 'is_public'], 'integer'],
+            [['id', 'user_id', 'level_id', 'type', 'create_time', 'reply_time', 'is_public','is_reply'], 'integer'],
             [['user_name', 'mobile', 'title', 'address', 'unit', 'question', 'reply'], 'safe'],
         ];
     }
@@ -80,8 +88,13 @@ class MysaySearch extends Mysay
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'address', $this->address])
             ->andFilterWhere(['like', 'unit', $this->unit])
-            ->andFilterWhere(['like', 'question', $this->question])
-            ->andFilterWhere(['like', 'reply', $this->reply])->orderBy(['id'=>SORT_DESC]);
+            ->andFilterWhere(['like', 'question', $this->question])->orderBy(['id'=>SORT_DESC]);
+            $str="";
+            if($this->is_reply==1){
+                $query->andWhere("reply=''")->orderBy(['id'=>SORT_DESC]);
+            }else if($this->is_reply==2){
+                $query->andWhere("reply<>''")->orderBy(['id'=>SORT_DESC]);
+            }
 
         return $dataProvider;
     }
